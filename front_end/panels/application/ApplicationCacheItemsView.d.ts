@@ -1,0 +1,33 @@
+import * as UI from '../../ui/legacy/legacy.js';
+import type * as Protocol from '../../generated/protocol.js';
+import type { ApplicationCacheModel } from './ApplicationCacheModel.js';
+export declare class ApplicationCacheItemsView extends UI.View.SimpleView {
+    private readonly model;
+    private readonly deleteButton;
+    private connectivityIcon;
+    private statusIcon;
+    private readonly frameId;
+    private readonly emptyWidget;
+    private readonly nodeResources;
+    private viewDirty?;
+    private status?;
+    private manifest?;
+    private creationTime?;
+    private updateTime?;
+    private size?;
+    private resources?;
+    private dataGrid?;
+    constructor(model: ApplicationCacheModel, frameId: Protocol.Page.FrameId);
+    toolbarItems(): Promise<UI.Toolbar.ToolbarItem[]>;
+    wasShown(): void;
+    willHide(): void;
+    private maybeUpdate;
+    private markDirty;
+    updateStatus(status: number): void;
+    updateNetworkState(isNowOnline: boolean): void;
+    private update;
+    private createDataGrid;
+    private populateDataGrid;
+    private deleteButtonClicked;
+    private deleteCallback;
+}

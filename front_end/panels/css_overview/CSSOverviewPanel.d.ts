@@ -1,0 +1,31 @@
+import * as UI from '../../ui/legacy/legacy.js';
+export declare class CSSOverviewPanel extends UI.Panel.Panel {
+    private readonly model;
+    private readonly controller;
+    private readonly startView;
+    private readonly processingView;
+    private readonly completedView;
+    private backgroundColors?;
+    private textColors?;
+    private fillColors?;
+    private borderColors?;
+    private fontInfo?;
+    private mediaQueries?;
+    private unusedDeclarations?;
+    private elementCount?;
+    private cancelled?;
+    private globalStyleStats?;
+    private textColorContrastIssues?;
+    private constructor();
+    static instance(): CSSOverviewPanel;
+    private reset;
+    private requestNodeHighlight;
+    private renderInitialView;
+    private renderOverviewStartedView;
+    private renderOverviewCompletedView;
+    private startOverview;
+    private getStyleValue;
+    private cancelOverview;
+    private overviewCompleted;
+    wasShown(): void;
+}
