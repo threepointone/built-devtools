@@ -5,19 +5,16 @@ function sleep(period) {
 async function loop() {
   let value = -1;
   while (true) {
-    const ctr = await (await fetch(`http://localhost:3142`)).json();
+    const ctr = (await fetch(`http://localhost:3142`)).json().value;
     if (value !== -1) {
-      if (ctr.value !== value) {
+      if (ctr !== value) {
         location.reload();
-        break;
       } else {
         await sleep(1000);
       }
     } else {
-      value = ctr.value;
+      value = ctr;
       await sleep(1000);
     }
   }
 }
-
-loop();
